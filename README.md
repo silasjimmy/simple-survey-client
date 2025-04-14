@@ -53,3 +53,18 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Deployment
+
+The web application is deployed using the [firebase hosting](https://firebase.google.com/docs/hosting) service.
+
+The deployment process is streamlined and automated using Github Actions CI/CD tool. The process works as follows:
+
+1. Developer makes a change in a separate branch and pushes the changes to the remote repo.
+2. Developer raises a PR to the `development` or `main` branch.
+3. Github Actions builds and deplys the web application to a preview channel where the developer can canfirm the changes made on a live development environment.
+4. Once every change is confirmed and verified, the changes are merged to the `main` branch.
+5. Github Actions builds and deploys the web application to the production environment.
+
+- The deployed web application can be accessed using this link: [Sky Worl Survey](https://sky-world-survey.web.app/)
+> The web application might take around 30 seconds to function optimally. The delay is due to the time taken by the API instance to spin up due to inactivity.
