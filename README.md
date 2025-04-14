@@ -66,5 +66,5 @@ The deployment process is streamlined and automated using Github Actions CI/CD t
 4. Once every change is confirmed and verified, the changes are merged to the `main` branch.
 5. Github Actions builds and deploys the web application to the production environment.
 
-- The deployed web application can be accessed using this link: [Sky Worl Survey](https://sky-world-survey.web.app/)
+- The deployed web application can be accessed using this link: [Sky World Survey](https://sky-world-survey.web.app/)
 > The web application might take around 30 seconds to function optimally. The delay is due to the time taken by the API instance to spin up due to inactivity.
