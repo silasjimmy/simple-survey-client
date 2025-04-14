@@ -7,6 +7,11 @@ permissions:
   checks: write
   contents: read
   pull-requests: write
+defaults:
+  run:
+    working-directory: ./application-src
+env:
+  VITE_API_ENDPOINT: "${{ secrets.VITE_API_ENDPOINT }}"
 jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
@@ -16,6 +21,7 @@ jobs:
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entryPoint: ./application-src
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SKY_WORLD_SURVEY }}
           projectId: sky-world-survey
